@@ -108,11 +108,11 @@ router.post('/signup', async (req, res) => {
     }
 });
 
-router.get('/info', authenticateToken, (req, res) => {
+router.get('/info', authenticateToken, async (req, res) => {
     res.json({ id: req.user });
 });
 
-router.get('/logout', (req, res) => {
+router.get('/logout', async (req, res) => {
     res.sendStatus(204);
 });
 
