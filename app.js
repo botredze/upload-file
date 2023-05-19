@@ -6,15 +6,12 @@ const PORT = process.env.PORT || 3000
 
 const app = express();
 app.use(express.json());
-
 app.use(database);
 
 app.use(cors())
 
-
-
-const authRoutes = require('./routes/auth.routes');
-const fileRoutes = require('./routes/fileUpload.router');
+const authRoutes = require('./routs/auth.routes');
+const fileRoutes = require('./routs/file.routes');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/file', fileRoutes);
